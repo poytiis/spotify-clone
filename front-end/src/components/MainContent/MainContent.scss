@@ -1,0 +1,12 @@
+.main-content {
+  grid-row:  main-content-row-start / footer-start;
+  grid-column: main-content-column-start/ search-frineds-start ;
+  display: block;
+  overflow-y: auto;
+ 
+}
+
+.main {
+  height: 160vh;
+  // position: relative;
+}

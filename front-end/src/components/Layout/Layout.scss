@@ -1,0 +1,8 @@
+.layout {
+  display: grid;
+  grid-template-columns: [side-nav-bar-start] 200px [main-content-column-start] auto [search-frineds-start] 220px [search-frineds-end];
+  grid-template-rows: [main-content-row-start] auto [footer-start] 90px [footer-end];
+  height: 100vh;
+  width: 100vw
+
+}

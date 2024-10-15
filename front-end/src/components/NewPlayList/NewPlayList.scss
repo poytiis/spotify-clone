@@ -1,0 +1,87 @@
+.new-play-list {
+  position: fixed;
+  z-index: 2; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  opacity: 0;
+  transition:  opacity 0.6s;
+
+  &__content {
+    width: 620px;
+    height: 300px;
+    background-color: #34312E;
+    border-radius: 0.5rem;
+  }
+
+  &__header {
+    color: #F1EBEB;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top:-24px;
+    margin-bottom: 0.5rem;
+  }
+
+  &__outer-music-container {
+    background-color: #898176  ;
+    width: 33%;
+    height: 180px;
+    justify-content: center;
+  }
+
+  &__inner-music-container {
+    justify-content: center;
+  }
+
+  &__input-container {
+    width: 66%;
+    padding-left: 7%;
+  }
+
+  &__main-content-container {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  &__music-text {
+    color: white;
+    font-size: 1.0rem;
+  }
+
+  &__input {
+   height: 1.2rem;
+   margin-bottom: 0.5rem;
+   
+    &-label {
+      color: #CFC3C3;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  &__textarea {
+    height: 5.7rem;
+    border-radius: 0.5rem;
+  }
+
+  &__close_button {
+    height: 28px;
+    margin-left: auto;
+    margin-right: 0.4rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+
+  &__close-button-container {
+    width: 100%;
+    height: 50px;
+  }
+  
+}
