@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "functions": {
+    "FunctionsBackEnd": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7287",
+      "commandLineArgs": "--port 7064",
       "launchBrowser": false
     }
   }
