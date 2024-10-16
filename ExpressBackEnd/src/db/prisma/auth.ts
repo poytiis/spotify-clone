@@ -2,7 +2,7 @@ import prisma from './connect';
 
 class AuthModel {
     public static async getUser (email: string) {
-        const user = await prisma.spotify_user.findUnique({
+        const user = await prisma.spotifyUser.findUnique({
             where: {
                 email
             }

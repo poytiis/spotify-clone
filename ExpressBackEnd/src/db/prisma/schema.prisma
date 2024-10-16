@@ -7,15 +7,37 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model spotify_user {
-  id        String      @id @db.Uuid
-  email     String   @unique
-  first_name    String
-  last_name     String
-  password_hash     String  @db.VarChar(256)
+model SpotifyUser {
+  id String @id @db.Uuid
+  email String @unique
+  firstName String
+  lastName String
+  passwordHash String @db.VarChar(256)
 }
 
-model artist {
-  id Int @id
+model Artist {
+  id Int @id @default(autoincrement())
   name String
+  albums Album[]
+  musicSongs MusicSong[]
+}
+
+model Album {
+  id Int @id @default(autoincrement())
+  name String
+  releaseYear Int
+  artist Artist @relation(fields: [artistId], references: [id])
+  artistId Int
+  musicSongs MusicSong[]
+}
+
+model MusicSong {
+  id Int @id @default(autoincrement())
+  filPath String
+  duration Int
+  releaseYear Int
+  artist Artist @relation(fields: [artistId], references: [id])
+  artistId Int
+  album Album? @relation(fields: [albumId], references: [id])
+  albumId Int
 }

@@ -8,6 +8,8 @@ class AuthController {
         var user = await AuthService.logIn(email, password);
         if (user) {
             console.log(user)
+            // @ts-ignore:next-line
+            req.session.userId = user.id;
             res.json(user);        
         } else {
             res.sendStatus(401)
