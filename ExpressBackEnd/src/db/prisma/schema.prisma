@@ -14,3 +14,8 @@ model spotify_user {
   last_name     String
   password_hash     String  @db.VarChar(256)
 }
+
+model artist {
+  id Int @id
+  name String
+}
