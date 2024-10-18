@@ -1,6 +1,6 @@
 import { Response } from "express";
 import { TypedRequestBody, UserAPI } from '../types';
-import AuthService from '../services/auth';
+import AuthService from '../services/auth.service';
 
 class AuthController {
     public static async logIn (req: TypedRequestBody<UserAPI>, res: Response) {

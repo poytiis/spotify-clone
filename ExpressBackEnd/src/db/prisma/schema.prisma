@@ -13,6 +13,7 @@ model SpotifyUser {
   firstName String
   lastName String
   passwordHash String @db.VarChar(256)
+  playlists Playlist[]
 }
 
 model Artist {
@@ -40,4 +41,13 @@ model MusicSong {
   artistId Int
   album Album? @relation(fields: [albumId], references: [id])
   albumId Int
+  playlists Playlist[]
+}
+
+model Playlist {
+  id Int @id @default(autoincrement())
+  name String
+  creator SpotifyUser @relation(fields: [creatorId], references: [id])
+  creatorId String @db.Uuid
+  musigSongs MusicSong[]
 }

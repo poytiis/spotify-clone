@@ -1,7 +1,7 @@
-import prisma from './connect';
+import prisma from './connect.prisma';
 
-class AuthModel {
-    public static async getUser (email: string) {
+export class AuthModel {
+    public  async getUser (email: string) {
         const user = await prisma.spotifyUser.findUnique({
             where: {
                 email
@@ -10,5 +10,3 @@ class AuthModel {
         return user;
     }
 }
-
-export default AuthModel;

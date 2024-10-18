@@ -1,0 +1,19 @@
+POST http://localhost:3001/auth/logIn
+content-type: application/json
+
+{
+    "email": "tester@test.com",
+    "password": "s"
+}
+
+###
+GET http://localhost:3001/playlist/getUserPlaylists
+
+###
+
+POST http://localhost:3001/playlist/createPlaylist
+content-type: application/json
+
+{
+    "name": "Second"
+}

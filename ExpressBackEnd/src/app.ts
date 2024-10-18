@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import authRoutes from './routes/auth';
+import authRoutes from './routes/auth.route';
+import playlistRoutes from './routes/playlist.route';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 
@@ -35,5 +36,6 @@ app.post("/", (req: Request, res: Response) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/playlist", playlistRoutes);
 
 export default app;
