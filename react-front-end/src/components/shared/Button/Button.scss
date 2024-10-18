@@ -1,7 +1,11 @@
 .button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 80px;
+  border-radius: 80px;
   text-transform: uppercase;
-  border-radius: 2rem;
-  height: 2.1rem;
+  letter-spacing: 2px;
+  min-width: 180px;
 
   &:hover {
     cursor: pointer;
@@ -13,14 +17,12 @@
     border: 1px solid white;
     width: 100%;
     margin-top: 1.1rem;
-
   }
 
   &--green {
     color: white;
     background-color: #0CAE73;
     border: none;
-    padding: 0 2rem;
   }
 
   &--blue {

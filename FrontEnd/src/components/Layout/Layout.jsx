@@ -1,4 +1,3 @@
-import React from 'react';
 import './Layout.scss';
 import SideNav from './../SideNav/SideNav';
 import FriendsMusic from './../FriendsMusic/FriendsMusic';

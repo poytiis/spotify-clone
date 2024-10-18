@@ -1,14 +1,11 @@
-import React from 'react';
 import './App.scss';
-
-
 import {
   BrowserRouter,
   Switch,
   Route,
 } from "react-router-dom";
-
 import Layout from './components/Layout/Layout';
+import LandingPage from './components/LandingPage/LandingPage';
 
 
 function App() {
@@ -30,7 +27,7 @@ function App() {
           <Layout component= "searchList"></Layout>
           </Route>
           <Route exact path="/">
-            <Layout></Layout>
+            <LandingPage/>
           </Route>
         </Switch>
     </BrowserRouter>
