@@ -1,11 +1,11 @@
 import backgroundImg from '../../../imgs/background.jpg';
-import spotifyLogo from '../../../imgs/logo.png'
 import Button from '../../shared/Button/Button';
 import './LandingPage.scss';
 import { useNavigate  } from 'react-router-dom';
 import TextDecoration from '../../shared/TextDecoration/TextDecoration';
 import {Link} from 'react-router-dom';
 import SpotifyLogo from '../../shared/SpotifyLogo/SpotifyLogo';
+import BackgroundImage from '../../shared/BackgroundImage/BackgroundImage';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className='landing' style={background}>
+    <BackgroundImage>
       <div className='landing__container'>
         <SpotifyLogo/>
 
@@ -38,7 +38,7 @@ const LandingPage = () => {
 
         <Link to='/test' className='landing__link'> SETTINGS</Link>
       </div>
-    </div>
+    </BackgroundImage>
   );
 }
 

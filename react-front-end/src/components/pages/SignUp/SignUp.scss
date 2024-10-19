@@ -1,0 +1,27 @@
+.sign-up {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__decoration-container {
+    margin: 5px 0;
+  }
+
+  &__login-button-container {
+    margin-top: 20px;
+  }
+
+  &__link {
+    margin-top: auto;
+    margin-bottom: 15px;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    &:visited {
+      color: blue;
+    }
+  }
+}

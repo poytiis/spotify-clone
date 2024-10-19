@@ -28,5 +28,9 @@
   &__link {
     padding-bottom: 20px;
     margin-top: auto;
+
+    &:visited {
+      color: blue
+    }
   }
 }

@@ -1,0 +1,18 @@
+.input {
+  display: block;
+  margin-bottom: 12px;
+  width: 350px;
+  height: 35px;
+  border: none;
+  background-color : #444942;
+
+  &::placeholder {
+    color: #9a9c95;
+    padding-left: 5px;
+  }
+
+  &:focus{
+    outline: none;
+    background-color: #a9a9a9;
+  }
+}

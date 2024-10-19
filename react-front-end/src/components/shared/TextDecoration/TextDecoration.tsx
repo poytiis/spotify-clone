@@ -1,7 +1,7 @@
 import './TextDecoration.scss';
 
 interface  TextDecorationProps {
-  width: string;
+  width?: string;
   children: string
 }
 
