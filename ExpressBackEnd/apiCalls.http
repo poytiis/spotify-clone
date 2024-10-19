@@ -10,10 +10,20 @@ content-type: application/json
 GET http://localhost:3001/playlist/getUserPlaylists
 
 ###
-
 POST http://localhost:3001/playlist/createPlaylist
 content-type: application/json
 
 {
     "name": "Second"
+}
+
+###
+POST http://localhost:3001/auth/signup
+content-type: application/json
+
+{
+    "email": "testerdNegw2@test.com",
+    "password": "salasana",
+    "firstName": "New",
+    "lastName": "Last N"
 }

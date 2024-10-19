@@ -1,22 +1,16 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express, Request, Response, NextFunction  } from "express";
 import dotenv from "dotenv";
 import authRoutes from './routes/auth.route';
 import playlistRoutes from './routes/playlist.route';
 import bodyParser from 'body-parser';
 import session from 'express-session';
+import { allowCORS, errorHandler, requireAuth } from "./middlewares";
 
 dotenv.config();
 
 const app: Express = express();
 
-const requireAuth = (req: Request, res: Response, next: any) => {
-  if (req.session.userId) {
-    next();
-  } else {
-    res.sendStatus(401);
-  }
-}
-
+app.use(allowCORS)
 app.use(bodyParser.json())
 app.use(session({
   secret: 'my-secret-key',
@@ -25,17 +19,13 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-app.get("/",requireAuth, (req: Request, res: Response) => {
+app.get("/", requireAuth, (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
-});
-
-app.post("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-  const body = req.body;
-  console.log(body)
 });
 
 app.use("/auth", authRoutes);
 app.use("/playlist", playlistRoutes);
+
+app.use(errorHandler);
 
 export default app;

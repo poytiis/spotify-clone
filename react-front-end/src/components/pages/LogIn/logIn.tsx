@@ -37,7 +37,7 @@ const LogIn = () => {
           <Button type='green' handleClick={handleLogIn}>Log in</Button>
         </div>
        
-        <Link to='/' className='login__link'> HOME</Link>
+        <Link to='/' className='login__link'>HOME</Link>
       </div>
     </BackgroundImage>
   );
