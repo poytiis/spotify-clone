@@ -1,0 +1,45 @@
+.devices {
+  width: 280px;
+  height: 320px;
+  position: absolute;
+  top: -330px;
+  left: -135px;
+  background-color: #353434;
+  z-index: 1;
+  box-shadow: 4px 4px 4px black;
+
+  &__info-container {
+    width: 100%;
+    justify-content: flex-end;
+    
+    & img {
+      margin-right: 1rem;
+      margin-top: 1rem;
+    }
+  }
+  &__info-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__text-container {
+    text-align: center;
+    margin-top: -2rem;
+
+    & span {
+      color: #CFC3C3;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    & h4 {
+      color: white;
+      font-size: 1.0rem;
+      font-weight: bold;
+    }
+  }
+
+  &__button-container {
+    margin-top: 1.7rem;
+  }
+}

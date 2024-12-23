@@ -7,6 +7,7 @@ import { HTTPError } from '../utils/errors';
 class AuthService {
     public static async logIn (email: string, password: string) {
         const userInDB = await authModel.getUserByEmail(email);
+        console.log(userInDB)
         const passwordHash = createHash('sha256').update(password).digest('hex');
         if (passwordHash === userInDB?.passwordHash) {
             return userInDB;

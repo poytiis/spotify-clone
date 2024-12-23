@@ -1,0 +1,31 @@
+.tooltip {
+  position: absolute;
+  background-color: #2c2b2b;
+  padding: 0.4rem 0.6rem;
+  color: #EDEEE9;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  box-shadow: 4px 8px 10px rgb(20, 20, 20);
+  transition: opacity 0.3s;
+  box-sizing: border-box;
+
+  &__top {
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &--left {
+      bottom: 120%;
+      right: 60%;
+    }
+  }
+
+  &__bottom {
+    top: 100%;
+    right: 100%;
+    width: 140px;
+    margin-right: -80px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,107 @@
+.footer {
+  grid-column: side-nav-bar-start / search-frineds-end;
+  grid-row: footer-start / footer-end;
+  background-color: #353434;
+
+  & img:hover{
+    cursor: pointer;
+  }
+
+  &__song-container {
+    width: 220px;
+    margin-left: 1rem;
+    
+  }
+
+  &__right-container {
+    width: 240px;
+  }
+
+  &__song-image {
+    width: 60px;
+    height: 60px;
+    
+  }
+
+  &__song-name {
+    font-size: 0.9rem;
+    color: #CFC3C3  ;
+    font-weight: bold;
+  }
+
+  &__artist-name {
+    font-size: 0.7rem;
+    color: #CFC3C3 ;
+  }
+
+  &__song-name-container {
+    margin-left: 0.4rem;
+    justify-content: center;
+  }
+
+  &__song-like-icon {
+    width: 22px;
+    height: 22px;
+    margin-left: 0.3rem;
+  }
+
+  &__play-container {
+    flex-grow: 1;
+    
+
+    & img  {
+      margin-right: 1.8rem;
+    }
+  }
+
+  &__play-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  &__play-time-bar {
+    height: 0;
+    width: 45vw;
+    border-bottom: 3px solid gray;
+    margin: 0 1rem;
+    max-width: 1000px;
+  }
+
+  &__play-time {
+    color: #CFC3C3 ;
+  }
+
+  &__play-button-container {
+    margin-bottom: 0.4rem;
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+
+    &:nth-child(1), &:nth-child(2), &:nth-child(4) {
+      margin-right: 1rem;
+    }
+
+    &-queque-container, &-expand-container, &-volume-container, &-devices-container,
+    &-next-container, &-repeat-container, &-play-container, &-back-container, &-shuffle-container {
+      position: relative;
+
+      &:hover .tooltip {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__volume-bar {
+    height: 0;
+    width: 80px;
+    border-bottom: 3px solid gray;
+    margin: 0 0.6rem;
+  }
+
+  &__devices-container {
+    position: relative;
+  }
+
+}

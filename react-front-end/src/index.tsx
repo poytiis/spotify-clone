@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { rootStore } from './store/store';
+import { AuthProvider } from './utils/AuthProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={rootStore}>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider> 
     </Provider>
   </React.StrictMode>
 );

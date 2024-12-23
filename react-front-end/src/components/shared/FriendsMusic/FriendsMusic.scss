@@ -1,0 +1,24 @@
+.friends-music {
+  grid-column: search-frineds-start / search-frineds-end;
+  grid-row:  main-content-row-start / footer-start;
+
+  background-color: #666;
+  justify-content: center;
+
+  &__text {
+    font-size: 1.1rem;
+    color: #F1EBEB;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__content-container {
+    width: 85%;
+    text-align: center;
+  }
+
+  &__find-button {
+    margin-top: 1.2rem;
+    width: 100%;
+  }
+}

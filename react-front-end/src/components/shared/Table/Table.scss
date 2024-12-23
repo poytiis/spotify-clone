@@ -1,0 +1,107 @@
+.table {
+  width: 95%;
+  table-layout: fixed;
+  text-align: left;
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  &__icon-column {
+    width: 5%;
+  }
+
+  &__name-column {
+    width: 30%;
+  }
+  &__artist-column {
+    width: 25%;
+  }
+
+  &__album-column {
+    width: 20%;
+  }
+
+  &__date-column {
+    width: 10%;
+  }
+  &__time-column {
+    width: 5%;
+  }
+
+  &__container {
+    background-color: #181616;
+    width: 100%;
+ 
+  }
+
+  &__header-text {
+    color: #EDEEE9;
+    font-size: 0.6rem;
+    letter-spacing: 0.1rem;
+
+  }
+
+  &__header-icon {
+    width: 22px;
+    height: 22px;
+  }
+  & tr {
+    border-bottom: 0.6px #5B5656 solid;
+    &:hover {
+      background-color: #4A4747;
+      cursor: pointer;
+    }
+
+    &:hover .table__row-icon--large {
+      visibility: visible;
+    }
+  }
+
+  & td {
+    color: #EDEEE9;
+    font-size: 1rem;
+  }
+
+  &__row-icon {
+    width: 20px;
+    height: 20px;
+
+    &--large {
+      width: 30px;
+      height: 30px;
+      padding: 0.2rem 0;
+      visibility: hidden;
+      padding-left: 0.4rem;
+    }
+  }
+
+  &__sticy {
+    position: fixed;
+    top: 100px;
+    width: calc((100% - 436px)*0.95);
+    left: calc(((100% - 436px)*0.05)*0.5 + 200px);
+    color: #EDEEE9;
+    background-color: #181616;
+    z-index: 1;
+    display: flex;
+    border-bottom: 0.6px #5B5656 solid;
+    visibility: hidden;
+    & span {
+      font-size: 0.8rem;
+    }
+
+  }
+ 
+}
+.table__sticy-header {
+  visibility: visible;
+}
+
+.table__icon-column--sticy {
+  width: calc((100% - 436px)*0.05);
+  width: 5%;
+}
+
+.a {
+  width: calc((100% - 436px)*0.3);
+  width: 30%;
+}

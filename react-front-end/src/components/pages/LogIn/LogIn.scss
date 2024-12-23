@@ -19,9 +19,19 @@
     margin-bottom: 15px;
     font-size: 18px;
     letter-spacing: 2px;
+    color: #0956AE;
 
     &:visited {
-      color: blue;
+      color: #0956AE;
     }
+  }
+
+  &__error-message {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #b42a2a;
+    margin-top: 24px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
   }
 }

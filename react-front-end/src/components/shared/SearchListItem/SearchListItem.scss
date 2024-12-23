@@ -1,0 +1,47 @@
+.search-list-item {
+  width: 100%;
+  margin: 1rem 0;
+
+  &:hover {
+    background-color: #353434;
+    cursor: pointer;
+  }
+  &:hover &__close-icon {
+    opacity: 1;
+  }
+
+  &__image {
+    width: 64px;
+    height: 64px;
+    margin-right: 1rem;
+  }
+
+  &__close-icon-container {
+    margin-left: auto;
+  }
+  &__close-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+  }
+
+  &__text {
+    color: #988989;
+    font-size: 0.9rem;
+
+    &--light {
+      color: white;
+      font-size: 0.9rem;
+      margin: 0 0 0.3rem 0;
+      font-weight: bold;
+    }
+
+    &--capital {
+      letter-spacing: 0.1rem;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      color: #988989;
+    }
+  }
+}
