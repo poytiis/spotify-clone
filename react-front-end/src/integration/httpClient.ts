@@ -1,6 +1,6 @@
 const baseURL = process.env.REACT_APP_BASE_URL
 
-const fetchRequest = async (method: string, path: string, body:any,  handleUnauthorized: () => void) => {
+const fetchRequest = async (method: string, path: string, body: any,  handleUnauthorized: () => void ) => {
   const response = await fetch(baseURL + path, {
     method: method,
     credentials: 'include',
@@ -17,6 +17,7 @@ const fetchRequest = async (method: string, path: string, body:any,  handleUnaut
     } else {
       const errorData = await response.json();
       const errorMessage = errorData.message || 'An error occurred';
+      console.log(errorMessage);
   
       throw new Error(
         `Error ${response.status}: ${errorMessage}`
@@ -39,6 +40,21 @@ export const signUpAJAX = async (postBody: SignUpRequest,   handleUnauthorized: 
   return data as SignUpResponse;
 }
 
+export const checkLogInAjax = async () => {
+  const data = await fetchRequest('POST', 'auth/checklogin', {}, () => {});
+  return data as LogInRequest;
+}
+
+export const getUserPlaylistsAjax = async () => {
+  const data = await fetchRequest('GET', 'playlist/', undefined, () => {});
+  return data as GetUserPlaylistsResponse;
+}
+
+export const createPlaylistAjax = async (postBody: CreatePlaylistRequest) => {
+  const data = await fetchRequest('POST', 'playlist/', postBody, () => {});
+  return data as PlaylistInfo;
+}
+
 
 interface SignUpRequest {
   email:string;
@@ -54,3 +70,18 @@ interface SignUpResponse {
 }
 
 type LogInRequest = SignUpResponse;
+
+interface PlaylistInfo {
+  name: string;
+  description?: string;
+  id: number;
+}
+
+interface GetUserPlaylistsResponse {
+  playlists: PlaylistInfo[];
+}
+
+interface CreatePlaylistRequest {
+  name: string;
+  description?: string;
+}

@@ -7,6 +7,6 @@ export class PlaylistService {
     }
 
     public static async createPlaylist(creatorId: string, name: string) {
-        await playlistModel.createPlaylist(creatorId, name);
+       return  await playlistModel.createPlaylist(creatorId, name);
     }
 }

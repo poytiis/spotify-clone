@@ -12,8 +12,8 @@ class PlaylistController {
   public static async createPlaylist(req: TypedRequestBody<CreatePlaylisAPI>, res: Response) {
     const name = req.body.name;
     const userId = req.session.userId
-    await PlaylistService.createPlaylist(userId, name);
-    res.sendStatus(200);
+    const playlis = await PlaylistService.createPlaylist(userId, name);
+    res.json(playlis);
   }
 }
 

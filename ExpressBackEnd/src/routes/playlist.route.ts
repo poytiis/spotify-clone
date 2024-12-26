@@ -3,7 +3,7 @@ import PlaylistController from '../controllers/playlist.controller';
 
 const router = express.Router();
 
-router.get('/getUserPlaylists', PlaylistController.getUserPlaylists);
-router.post('/createPlaylist', PlaylistController.createPlaylist);
+router.get('/', PlaylistController.getUserPlaylists);
+router.post('/', PlaylistController.createPlaylist);
 
 export default router;

@@ -9,7 +9,7 @@ import useInput from '../../../hooks/useInput';
 import { signUpAJAX } from '../../../integration/httpClient';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../store/slices/userSlice';
-import { useHandleUnauthorized } from '../../../utils/AuthProvider';
+import { useAuth } from '../../../authentication/AuthProvider';
 
 const SignUp = () => {
   const emailControl = useInput({type: 'text', placeholder: 'email'});
@@ -19,7 +19,7 @@ const SignUp = () => {
   const repeatPasswordControl = useInput({type: 'password', placeholder: 'repeat password'});
 
   const dispatch = useDispatch();
-  const handleUnauthorized = useHandleUnauthorized();
+  const authControl = useAuth();
 
   const handleSignUp = async () => {
     const postBody = {
@@ -30,7 +30,7 @@ const SignUp = () => {
     }
 
     try {
-      const user = await signUpAJAX(postBody, handleUnauthorized);
+      const user = await signUpAJAX(postBody, authControl.logout);
       dispatch(setUser(user))
     } catch (err) {
 
@@ -43,7 +43,7 @@ const SignUp = () => {
       <div className='sign-up'>
         <SpotifyLogo/>
 
-        <Button type='blue' handleClick={() => {}}>Sign up with Facebook</Button>
+        <Button type='blue-large' handleClick={() => {}}>Sign up with Facebook</Button>
         <div className='sign-up__decoration-container'>
           <TextDecoration>OR</TextDecoration>
         </div>
@@ -54,7 +54,7 @@ const SignUp = () => {
         <Input control={passwordControl} />
         <Input control={repeatPasswordControl} />
         <div className='sign-up__login-button-container'>
-          <Button type='green' handleClick={handleSignUp}>Sign up</Button>
+          <Button type='green-large' handleClick={handleSignUp}>Sign up</Button>
         </div>
       
         <Link to='/' className='sign-up__link'> HOME</Link>

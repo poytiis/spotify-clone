@@ -11,7 +11,7 @@ export class PlaylistModel {
     }
 
     public async createPlaylist(creatorId: string, name: string) {
-        await prisma.playlist.create({
+        return await prisma.playlist.create({
             data: {
                 name,
                 creatorId

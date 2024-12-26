@@ -1,4 +1,3 @@
-import backgroundImg from '../../../imgs/background.jpg';
 import Button from '../../shared/Button/Button';
 import './LandingPage.scss';
 import { useNavigate  } from 'react-router-dom';
@@ -10,10 +9,6 @@ import BackgroundImage from '../../shared/BackgroundImage/BackgroundImage';
 const LandingPage = () => {
   const navigate = useNavigate();
 
-  const background = {
-    backgroundImage:"url(" + backgroundImg + ")"
-  };
-
   return (
     <BackgroundImage>
       <div className='landing__container'>
@@ -24,7 +19,7 @@ const LandingPage = () => {
         </div>
 
         <Button 
-          type='green' 
+          type='green-large' 
           handleClick={()=> navigate('/signup')}
         > 
           sign up free
@@ -33,7 +28,7 @@ const LandingPage = () => {
         <TextDecoration width='304px'>ALREADY HAVE AN ACCOUNT?</TextDecoration>
 
         <div> 
-          <Button type='white' handleClick={()=>navigate('/login')}> log in</Button>
+          <Button type='white-large' handleClick={()=>navigate('/login')}> log in</Button>
         </div>
 
         <Link to='/test' className='landing__link'> SETTINGS</Link>

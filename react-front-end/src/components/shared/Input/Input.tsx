@@ -3,13 +3,14 @@ import { UseInput } from '../../../hooks/useInput';
 import './Input.scss';
 
 interface InputProps {
-  control: UseInput
+  control: UseInput;
+  className?: string;
 }
 
 const Input = (props: InputProps) => {
   return (
     <input
-      className='input'
+      className={props.className ? 'input ' + props.className :'input'}
       placeholder={props.control.placeholder}
       type={props.control.type}
       value={props.control.value}

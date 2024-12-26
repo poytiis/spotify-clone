@@ -1,15 +1,14 @@
-import React from 'react';
 import './Header.scss';
-
-import user from '../../../imgs/icons/person-white.png';
+import userIcon from '../../../imgs/icons/person-white.png';
 import arrow from '../../../imgs/icons/expand-arrow.png';
 import search from '../../../imgs/icons/search.png';
 import albumImage from '../../../imgs/icons/test.jpg';
 import heart from '../../../imgs/icons/heart-circular.png';
 import more from '../../../imgs/icons/dots-more-circular.png';
-
 import Button from '../Button/Button';
 import { useNavigate } from "react-router-dom";
+import { useSelector, UseSelector } from 'react-redux';
+import { RootState } from '../../../store/store';
 
 const inputIconStyle =  {
   backgroundImage: `url(${search})`,
@@ -21,8 +20,8 @@ interface HeaderProps {
 }
 
 const Header = (props: HeaderProps) => {
-
   const navigate = useNavigate();
+  const user = useSelector((state: RootState) => state.user);
 
   function handleSearchFocus() {
     console.log('sdlkjsfd');
@@ -34,7 +33,7 @@ const Header = (props: HeaderProps) => {
   }
 
   const headerClass = props.scrolled ? "header__fixed--black" : "";
-  console.log(headerClass)
+  const fullName = user.firstName + ' ' + user.lastName;
   if (props.type === 'large') {
     return (
     <div className="header--large">
@@ -43,8 +42,8 @@ const Header = (props: HeaderProps) => {
         <input style={inputIconStyle} className="header__input" type="text" placeholder="Hae" onFocus={handleSearchFocus} />
 
         <div className="header__user-container flex-row-center">
-          <img className="header__user-icon" src={user} alt="user"/>
-          <span className="header__text header__username">Teemu Pöytäniemi</span>
+          <img className="header__user-icon" src={userIcon} alt="user"/>
+          <span className="header__text header__username">{fullName}</span>
           <div className="header__dropdown-container">
             <img src={arrow} alt="arrow"/>
             <div className="header__dropdown flex-column">
@@ -90,8 +89,8 @@ const Header = (props: HeaderProps) => {
         <input style={inputIconStyle} className="header__input" type="text" placeholder="Hae"/>
 
         <div className="header__user-container flex-row-center">
-          <img className="header__user-icon" src={user} alt="user"/>
-          <span className="header__text header__username">Teemu Pöytäniemi</span>
+          <img className="header__user-icon" src={userIcon} alt="user"/>
+          <span className="header__text header__username">{fullName}</span>
           <div className="header__dropdown-container">
             <img src={arrow} alt="arrow"/>
             <div className="header__dropdown flex-column">

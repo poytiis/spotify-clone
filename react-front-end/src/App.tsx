@@ -3,26 +3,51 @@ import LandingPage from "./components/pages/LandingPage/LandinPage";
 import LogIn from "./components/pages/LogIn/logIn";
 import SignUp from "./components/pages/SignUp/SignUp";
 import HomePage from "./components/pages/HomePage/HomePage";
+import ProtectedRoute from "./authentication/ProtectedRoute";
+import RedirectLoggedInRoute from "./authentication/RedirectLoggedInRoute";
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage/>
+    element: <ProtectedRoute/>,
+    children: [
+      {
+        index: true,
+        element: <HomePage/>
+      }
+    ]
   },
   {
     path: '/login',
-    element: <LogIn/>
+    element: <RedirectLoggedInRoute/>,
+    children: [
+      {
+        index: true,
+        element: <LogIn/>
+      }
+    ]
   },
   {
     path: '/signup',
-    element: <SignUp/>
+    element: <RedirectLoggedInRoute/>,
+    children: [
+      {
+        index: true,
+        element: <SignUp/>
+      }
+    ]
   },
   {
     path: '/landing',
-    element: <LandingPage/>
+    element: <RedirectLoggedInRoute/>,
+    children: [
+      {
+        index: true,
+        element: <LandingPage/>
+      }
+    ]
   },
 
 ]);
-
 
 export { router };

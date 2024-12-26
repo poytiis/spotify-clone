@@ -17,3 +17,8 @@ VALUES
 INSERT INTO "musicSong"
 VALUES
     (1, './song.mp3', 100, 2000, 1, 1);
+
+INSERT INTO "Playlist"
+VALUES
+    (1, 'Rock', '3e0ab190-3e91-41fa-ba39-1af141a55495', 'Dummy description'),
+    (2, 'Trance', '3e0ab190-3e91-41fa-ba39-1af141a55495', 'Dummy Trance');

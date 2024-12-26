@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post('/logIn', validateHTTPBody(LoginDTO), AuthController.logIn);
 router.post('/signUp', validateHTTPBody(SignUpDTO), AuthController.signUp);
-router.post('/checklogin', validateHTTPBody(SignUpDTO), AuthController.checkLogIn);
+router.post('/checklogin', AuthController.checkLogIn);
 
 export default router;

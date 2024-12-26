@@ -6,6 +6,13 @@
   border: none;
   background-color : #444942;
 
+  &__new-playlist {
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+    background-color: white;
+    border-radius: 0.2rem;
+  }
+
   &::placeholder {
     color: #9a9c95;
     padding-left: 5px;

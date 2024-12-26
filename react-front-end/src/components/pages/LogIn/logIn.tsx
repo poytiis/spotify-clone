@@ -10,11 +10,13 @@ import { logInAJAX } from '../../../integration/httpClient';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../store/slices/userSlice';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
   const emailControl = useInput({type: 'text', placeholder: 'email'});
   const passwordControl = useInput({type: 'password', placeholder: 'password'});
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const handleUnauthorized = () => {
@@ -27,6 +29,7 @@ const LogIn = () => {
       if (user) {
         dispatch(setUser(user))
         setError('')
+        navigate('/')
       }
     } catch (err) {
       setError('Unknown error!')
@@ -39,7 +42,7 @@ const LogIn = () => {
       <div className='login'>
         <SpotifyLogo/>
 
-        <Button type='blue' handleClick={() => {}}>Log in with Facebook</Button>
+        <Button type='blue-large' handleClick={() => {}}>Log in with Facebook</Button>
         <div className='login__decoration-container'>
           <TextDecoration>OR</TextDecoration>
         </div>
@@ -47,7 +50,7 @@ const LogIn = () => {
         <Input control={emailControl} />
         <Input control={passwordControl} />
         <div className='login__login-button-container'>
-          <Button type='green' handleClick={handleLogIn}>Log in</Button>
+          <Button type='green-large' handleClick={handleLogIn}>Log in</Button>
         </div>
 
         <div className='login__error-message'>{error}</div>

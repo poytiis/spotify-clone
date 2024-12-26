@@ -1,24 +1,53 @@
-import{ useState } from 'react';
+import{ useEffect, useState, useCallback } from 'react';
 import './SideNav.scss';
 import { Link } from 'react-router-dom';
 import NewPlaylist from '../NewPLaylist/NewPlaylist';
-
 import dots from '../../../imgs/icons/dots-more.png';
 import home from '../../../imgs/icons/home.png';
 import musicRecord from '../../../imgs/icons/music-record.png';
 import radio from '../../../imgs/icons/radio-waves.png'
 import add from '../../../imgs/icons/add-circular.png'
+import { getUserPlaylistsAjax } from '../../../integration/httpClient';
+import { RootState, useAppDispatch } from '../../../store/store';
+import { setPLaylists } from '../../../store/slices/playlistSlice';
+import { useSelector } from 'react-redux';
 
 const SideNav = () => {
   const [showNewPlayList, setShowNewPlayList] = useState(false);
+  const dispatch = useAppDispatch();
+  const playlists = useSelector((state: RootState) => state.playlist.playlists);
 
-  function openNewPlayList() {
+  const fetchPlaylists = useCallback(async () => {
+    const playlist = await getUserPlaylistsAjax();
+    dispatch(setPLaylists(playlist));
+  },[]);
+
+  useEffect(() => {
+    fetchPlaylists()
+  }, []);
+
+  const openNewPlayList = () => {
     setShowNewPlayList(true);
   }
 
-  function closeNewPlayList() {
+  const closeNewPlayList = () => {
     setShowNewPlayList(false);
   }
+
+  const saveAndCloseNewPlaylist = () => {
+    setShowNewPlayList(false);
+    fetchPlaylists();
+  }
+
+  const openPlaylist = (id: number) => {
+
+  }
+
+  const playlistsLists = playlists.map(item => {
+    return <span className='side-nav__text' onClick={() => {openPlaylist(item.id)}}>
+      {item.name}
+    </span>
+  });
 
   return (
     <div className="side-nav flex-column">
@@ -55,7 +84,7 @@ const SideNav = () => {
       <div  className="flex-column">
         <span className="side-nav__header">Soittolistat</span>
 
-        <span className="side-nav__text">Tykätty radiosta</span>
+        {playlistsLists}
       </div>
 
       <div className="side-nav__add-playlist-container">
@@ -65,7 +94,7 @@ const SideNav = () => {
         </div>
       </div>
 
-      {showNewPlayList ? <NewPlaylist close={closeNewPlayList}/> : null}
+      {showNewPlayList ? <NewPlaylist close={closeNewPlayList} saveAndClose={saveAndCloseNewPlaylist}/> : null}
     </div>
   );
 }

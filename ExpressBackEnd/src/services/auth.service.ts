@@ -37,6 +37,10 @@ class AuthService {
 
         return await authModel.createUser(user, passwordHash, newUUID);
     }
+
+    public static async fetchUser(userId: string) {
+        return await authModel.getUserById(userId);
+    }
 }
 
 export default AuthService;

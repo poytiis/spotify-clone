@@ -13,9 +13,7 @@ const HomePage = () => {
       <FriendsMusic/>
       <MainContent/>
     </div>
-   
-  );
-  
+  ); 
 }
 
 export default HomePage;

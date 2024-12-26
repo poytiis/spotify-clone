@@ -7,9 +7,15 @@ interface ButtonPros {
 }
 
 const Button = (props: ButtonPros) => {
-  let buttonClass = props.type   
-    ? 'button button--' + props.type
-    : 'button';
+  let buttonClass = 'button';
+  if(props.type) {
+    const typeSplit = props.type.split('-');
+    if(typeSplit.length > 0) {
+      typeSplit.forEach(type => {
+        buttonClass += ' button--' + type
+      })
+    }
+  }
 
   return (
     <button className={buttonClass} onClick={() => {props.handleClick()}}>{props.children}</button>

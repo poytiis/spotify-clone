@@ -47,6 +47,7 @@ model MusicSong {
 model Playlist {
   id Int @id @default(autoincrement())
   name String
+  description String?
   creator SpotifyUser @relation(fields: [creatorId], references: [id])
   creatorId String @db.Uuid
   musigSongs MusicSong[]
