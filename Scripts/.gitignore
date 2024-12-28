@@ -1,0 +1,4 @@
+/AzureDeploy/.env
+/terraform/*.tfplan
+/terraform/.terraform/*
+/terraform/terraform.tfstate

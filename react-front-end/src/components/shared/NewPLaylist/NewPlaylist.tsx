@@ -39,6 +39,7 @@ const NewPlaylist = (props: NewPLaylistProps) => {
 
     try {
       await createPlaylistAjax(body);
+      setErrorMessage('');
       close()
       props.saveAndClose()
     } catch(ex) {
